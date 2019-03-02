@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StartRemoteControl>
+	<HostList>
+		<Group>
+			<DisplayName>Goup 1</DisplayName>
+			<Host>
+				<DisplayName>Computer 1</DisplayName>
+				<HostName>1234ASDF</HostName>
+			</Host>
+			<Host>
+				<DisplayName></DisplayName>
+				<HostName>ASDF1234</HostName>
+			</Host>
+		</Group>
+		<Group>
+			<DisplayName>Group 2</DisplayName>
+			<Host>
+				<DisplayName></DisplayName>
+				<HostName>QWER0987</HostName>
+			</Host>
+			<Host>
+				<DisplayName>Computer 2</DisplayName>
+				<HostName>zxcv5678</HostName>
+			</Host>
+		</Group>
+	</HostList>
+	<ApplicationList>
+		<Application>
+			<DisplayName>Remote Desktop Connection</DisplayName>
+			<Command>C:\Windows\System32\mstsc.exe</Command>
+			<Parameters>/f /public /v:DUMMYCOMPUTERNAME</Parameters>
+		</Application>
+		<Application>
+			<DisplayName>DameWare Mini Remote Control</DisplayName>
+			<Command>C:\Program Files\SolarWinds\DameWare Mini Remote Control x64\DWRCC.exe</Command>
+			<Command>C:\Program Files\SolarWinds\DameWare Mini Remote Control\DWRCC.exe</Command>
+			<Command>C:\Program Files (x86)\SolarWinds\DameWare Mini Remote Control\DWRCC.exe</Command>
+			<Parameters>-c: -h: -a:1 -md: -m:DUMMYCOMPUTERNAME</Parameters>
+		</Application>
+		<Application>
+			<DisplayName>SCCM Remote Control</DisplayName>
+			<Command>C:\Program Files\Microsoft Configuration Manager\AdminConsole\bin\i386\CmRcViewer.exe</Command>
+			<Command>C:\Program Files (x86)\Microsoft Configuration Manager\AdminConsole\bin\i386\CmRcViewer.exe</Command>
+			<Command>\\servername\sharename\SCCM Remote Control Viewer\CmRcViewer.exe</Command>
+			<Parameters>DUMMYCOMPUTERNAME</Parameters>
+		</Application>
+		<Application>
+			<DisplayName>SCCM Resource Explorer</DisplayName>
+			<Command>C:\Program Files\Microsoft Configuration Manager\AdminConsole\bin\ResourceExplorer.exe</Command>
+			<Command>C:\Program Files (x86)\Microsoft Configuration Manager\AdminConsole\bin\ResourceExplorer.exe</Command>
+			<!-- Change the line below with the correct connection path to your SCCM server -->
+			<Parameters>-s -sms:ResExplrQuery="SELECT ResourceID FROM SMS_R_SYSTEM WHERE Name = 'DUMMYCOMPUTERNAME'" -sms:Connection=\\ConfigMgrServer\root\sms\site_SMS</Parameters>
+		</Application>
+		<Application>
+			<DisplayName>Logged on users</DisplayName>
+			<Command>C:\Windows\System32\cmd.exe</Command>
+			<Parameters>/k query user /server:DUMMYCOMPUTERNAME &amp; @echo. &amp; @echo.</Parameters>
+		</Application>
+		<Application>
+			<DisplayName>Explore C$</DisplayName>
+			<Command>C:\Windows\explorer.exe</Command>
+			<Parameters>/separate,/root,\\DUMMYCOMPUTERNAME\C$</Parameters>
+		</Application>
+		<Application>
+			<DisplayName>Install SCCM client</DisplayName>
+			<ToolTip>If already installed, script will uninstall client first.</ToolTip>
+			<Command>c:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe</Command>
+			<Parameters>-NoProfile -File ".\scripts\Install-SCCMClient.ps1" -ComputerName DUMMYCOMPUTERNAME</Parameters>
+		</Application>
+		<Application>
+			<DisplayName>Ping -T</DisplayName>
+			<Command>C:\Windows\System32\cmd.exe</Command>
+			<Parameters>/k ping -t DUMMYCOMPUTERNAME</Parameters>
+		</Application>
+	</ApplicationList>
+</StartRemoteControl>

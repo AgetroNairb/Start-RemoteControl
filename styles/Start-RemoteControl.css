@@ -1,0 +1,74 @@
+body {
+    background: #1A1A1A;
+    color: #d9d9d9;
+}
+
+#MenuDiv {
+    padding: 16px;
+}
+
+#Host {
+    font-size: 1em;
+    padding: 3px 1em 3px .4em;
+    margin-right: -4px;
+    border: 1px solid #555555;
+    background-color: #2F2F2F;
+}
+
+.ui-menu { 
+    display: inline-block;
+    font-size: 1em;
+    white-space: nowrap;
+    max-height: 505px;
+}
+
+.ui-menu .ui-menu-item .ui-menu .ui-menu-item .ui-menu {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.ui-menu-item {
+    background: #2F2F2F;
+    border: 1px solid #555555;
+}
+
+.ui-widget-content .ui-state-active {
+    font-weight: normal;
+}
+
+#AppsDiv {
+    padding: 16px;
+}
+
+.AppTile {
+    width: 320px;
+    height: 64px;
+    background: #2F2F2F;
+    border: 1px solid #555555;
+    padding: 5px;
+    overflow: hidden;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 16px;
+    margin-bottom: 16px;
+}
+
+.AppTile:hover {
+    border: 1px solid #096ac8;
+    color: #75abff;
+    background: #292929;
+}
+
+.AppTile .Centered {
+    display: inline-block;
+}
+
+.AppTile .Centered img {
+    width: 48px;
+}
+
+.AppTile .Centered div {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 5px;
+}
