@@ -18,4 +18,4 @@ Multiple commands can be provided for each application to allow the PowerShell s
 
 A generic image is be displayed in the GUI if a PNG in the images folder isn't found with the same name as the executable.
 
-I've changed a few lines in files to make them somewhat generic and they will need to be reviewed and changed before their used.
+I've changed a few lines in files to make them somewhat generic and they will need to be reviewed and changed before they're used.
